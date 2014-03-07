@@ -1,0 +1,28 @@
+---
+abstract: 'Mojolicious + http://getbootstrap.com/'
+author:
+  - 'Jan Henning Thorsen <jhthorsen@cpan.org>'
+build_requires:
+  Test::More: 0.90
+configure_requires:
+  ExtUtils::MakeMaker: 0
+dynamic_config: 1
+generated_by: 'ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.120921'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Mojolicious-Plugin-Bootstrap3
+no_index:
+  directory:
+    - t
+    - inc
+requires:
+  Mojolicious: 4.30
+  Mojolicious::Plugin::AssetPack: 0.0601
+resources:
+  bugtracker: https://github.com/jhthorsen/mojolicious-plugin-bootstrap3/issues
+  homepage: https://metacpan.org/release/Mojolicious-Plugin-Bootstrap3
+  license: http://dev.perl.org/licenses/
+  repository: https://github.com/jhthorsen/mojolicious-plugin-bootstrap3
+version: 3.1001

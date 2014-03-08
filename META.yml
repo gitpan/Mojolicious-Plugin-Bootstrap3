@@ -25,4 +25,4 @@ resources:
   homepage: https://metacpan.org/release/Mojolicious-Plugin-Bootstrap3
   license: http://dev.perl.org/licenses/
   repository: https://github.com/jhthorsen/mojolicious-plugin-bootstrap3
-version: 3.1001
+version: 3.1002

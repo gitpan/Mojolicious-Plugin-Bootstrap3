@@ -19,10 +19,10 @@ no_index:
     - inc
 requires:
   Mojolicious: 4.30
-  Mojolicious::Plugin::AssetPack: 0.0601
+  Mojolicious::Plugin::AssetPack: 0.08
 resources:
   bugtracker: https://github.com/jhthorsen/mojolicious-plugin-bootstrap3/issues
   homepage: https://metacpan.org/release/Mojolicious-Plugin-Bootstrap3
   license: http://dev.perl.org/licenses/
   repository: https://github.com/jhthorsen/mojolicious-plugin-bootstrap3
-version: 3.1006
+version: 3.1007

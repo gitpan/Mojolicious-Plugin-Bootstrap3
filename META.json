@@ -33,7 +33,7 @@
       "runtime" : {
          "requires" : {
             "Mojolicious" : "5.00",
-            "Mojolicious::Plugin::AssetPack" : "0.21"
+            "Mojolicious::Plugin::AssetPack" : "0.24"
          }
       }
    },
@@ -47,5 +47,5 @@
          "url" : "https://github.com/jhthorsen/mojolicious-plugin-bootstrap3.git"
       }
    },
-   "version" : "3.2000"
+   "version" : "3.2001"
 }

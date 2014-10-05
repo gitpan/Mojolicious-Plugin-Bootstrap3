@@ -23,9 +23,8 @@ lib/Mojolicious/Plugin/Bootstrap3/js/bootstrap/tooltip.js
 lib/Mojolicious/Plugin/Bootstrap3/js/bootstrap/transition.js
 lib/Mojolicious/Plugin/Bootstrap3/js/jquery-1.11.0.min.js
 lib/Mojolicious/Plugin/Bootstrap3/js/jquery-1.11.0.min.map
-lib/Mojolicious/Plugin/Bootstrap3/packed/bootstrap-67fb911648df2cc34ec2c2469fb90c4c.js
-lib/Mojolicious/Plugin/Bootstrap3/packed/bootstrap-b692e37bd422ec1eb71d083547353d2e.css
-lib/Mojolicious/Plugin/Bootstrap3/packed/bootstrap-dff46cd15fb6e405cd16664b34194f45.js
+lib/Mojolicious/Plugin/Bootstrap3/packed/bootstrap-3f535fe7550fa8b46b3d8cc21fd0b5e8.js
+lib/Mojolicious/Plugin/Bootstrap3/packed/bootstrap-a2538f7e0b5d9c7a98f8a13002b08841.css
 lib/Mojolicious/Plugin/Bootstrap3/sass/_bootstrap-compass.scss
 lib/Mojolicious/Plugin/Bootstrap3/sass/_bootstrap-mincer.scss
 lib/Mojolicious/Plugin/Bootstrap3/sass/_bootstrap-sprockets.scss

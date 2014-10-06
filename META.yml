@@ -24,4 +24,4 @@ resources:
   bugtracker: https://github.com/jhthorsen/mojolicious-plugin-bootstrap3/issues
   homepage: https://github.com/jhthorsen/mojolicious-plugin-bootstrap3
   repository: https://github.com/jhthorsen/mojolicious-plugin-bootstrap3.git
-version: 3.2001
+version: 3.2002

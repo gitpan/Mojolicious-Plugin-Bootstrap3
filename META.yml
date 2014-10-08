@@ -19,9 +19,9 @@ no_index:
     - inc
 requires:
   Mojolicious: 5.00
-  Mojolicious::Plugin::AssetPack: 0.24
+  Mojolicious::Plugin::AssetPack: 0.30
 resources:
   bugtracker: https://github.com/jhthorsen/mojolicious-plugin-bootstrap3/issues
   homepage: https://github.com/jhthorsen/mojolicious-plugin-bootstrap3
   repository: https://github.com/jhthorsen/mojolicious-plugin-bootstrap3.git
-version: 3.2002
+version: 3.2003

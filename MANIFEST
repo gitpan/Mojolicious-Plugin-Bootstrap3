@@ -1,7 +1,7 @@
+.perltidyrc
 .ship.conf
 Changes
 cpanfile
-demo.pl
 lib/Mojolicious/Plugin/Bootstrap3.pm
 lib/Mojolicious/Plugin/Bootstrap3/font/glyphicons-halflings-regular.eot
 lib/Mojolicious/Plugin/Bootstrap3/font/glyphicons-halflings-regular.svg
@@ -23,8 +23,22 @@ lib/Mojolicious/Plugin/Bootstrap3/js/bootstrap/tooltip.js
 lib/Mojolicious/Plugin/Bootstrap3/js/bootstrap/transition.js
 lib/Mojolicious/Plugin/Bootstrap3/js/jquery-1.11.0.min.js
 lib/Mojolicious/Plugin/Bootstrap3/js/jquery-1.11.0.min.map
+lib/Mojolicious/Plugin/Bootstrap3/packed/affix-67fb911648df2cc34ec2c2469fb90c4c.js
+lib/Mojolicious/Plugin/Bootstrap3/packed/alert-f2be09e15dd6839bcefc4d41a310471d.js
 lib/Mojolicious/Plugin/Bootstrap3/packed/bootstrap-3f535fe7550fa8b46b3d8cc21fd0b5e8.js
-lib/Mojolicious/Plugin/Bootstrap3/packed/bootstrap-a2538f7e0b5d9c7a98f8a13002b08841.css
+lib/Mojolicious/Plugin/Bootstrap3/packed/bootstrap-ca9500011758c86475e279b5939ab3b0.css
+lib/Mojolicious/Plugin/Bootstrap3/packed/button-e4c5d4efc4d3ddc2450087c40d9ecdf4.js
+lib/Mojolicious/Plugin/Bootstrap3/packed/carousel-4f4a220d5918d24a4f934d5c4a1fea9a.js
+lib/Mojolicious/Plugin/Bootstrap3/packed/collapse-9e483b798a6a9da0bce7f69997711ac1.js
+lib/Mojolicious/Plugin/Bootstrap3/packed/dropdown-a553cba0eceba0c07899ea27b76d242e.js
+lib/Mojolicious/Plugin/Bootstrap3/packed/jquery-1.11.0.min-8fc25e27d42774aeae6edbc0a18b72aa.js
+lib/Mojolicious/Plugin/Bootstrap3/packed/modal-da4a94f2415c974c44657ed1cc617620.js
+lib/Mojolicious/Plugin/Bootstrap3/packed/popover-f94ecc86cee825242f104881884313be.js
+lib/Mojolicious/Plugin/Bootstrap3/packed/scrollspy-2d273c832b24cb0da970854c29b50ec0.js
+lib/Mojolicious/Plugin/Bootstrap3/packed/tab-e611c9718d5c1e8e2b57d8571acb943c.js
+lib/Mojolicious/Plugin/Bootstrap3/packed/tooltip-54140456f26ed6b5f36cd3ab754ef6ba.js
+lib/Mojolicious/Plugin/Bootstrap3/packed/transition-dc9b48d14ec1af842434986170249445.js
+lib/Mojolicious/Plugin/Bootstrap3/README.md
 lib/Mojolicious/Plugin/Bootstrap3/sass/_bootstrap-compass.scss
 lib/Mojolicious/Plugin/Bootstrap3/sass/_bootstrap-mincer.scss
 lib/Mojolicious/Plugin/Bootstrap3/sass/_bootstrap-sprockets.scss
@@ -70,7 +84,6 @@ lib/Mojolicious/Plugin/Bootstrap3/sass/bootstrap/_type.scss
 lib/Mojolicious/Plugin/Bootstrap3/sass/bootstrap/_utilities.scss
 lib/Mojolicious/Plugin/Bootstrap3/sass/bootstrap/_variables.scss
 lib/Mojolicious/Plugin/Bootstrap3/sass/bootstrap/_wells.scss
-lib/Mojolicious/Plugin/Bootstrap3/sass/bootstrap/bootstrap.scss
 lib/Mojolicious/Plugin/Bootstrap3/sass/bootstrap/mixins/_alerts.scss
 lib/Mojolicious/Plugin/Bootstrap3/sass/bootstrap/mixins/_background-variant.scss
 lib/Mojolicious/Plugin/Bootstrap3/sass/bootstrap/mixins/_border-radius.scss
@@ -103,13 +116,11 @@ lib/Mojolicious/Plugin/Bootstrap3/sass/bootstrap/mixins/_vendor-prefixes.scss
 Makefile.PL
 MANIFEST			This list of files
 README
-README.md
+sache.json
 t/00-basic.t
-t/bin/sass
-t/files.t
-t/Helper.pm
-t/pack.t
-t/synopsis.t
+t/00-copy.t
+t/bundled.t
+t/public.t
 t/without-jquery.t
 META.yml                                 Module YAML meta-data (added by MakeMaker)
 META.json                                Module JSON meta-data (added by MakeMaker)

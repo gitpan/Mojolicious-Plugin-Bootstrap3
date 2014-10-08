@@ -6,7 +6,7 @@ Mojolicious::Plugin::Bootstrap3 - Mojolicious + http://getbootstrap.com/
 
 =head1 VERSION
 
-3.2002
+3.2003
 
 =head1 DESCRIPTION
 
@@ -19,20 +19,12 @@ L<modifications|/register> to the css pack.
 
 =head1 SYNOPSIS
 
-=head2 Mojolicious::Lite
+=head2 Mojolicious
 
   use Mojolicious::Lite;
   plugin "bootstrap3";
   get "/" => "index";
   app->start;
-
-=head2 Mojolicious
-
-  sub startup {
-    my $self = shift;
-
-    $self->plugin("bootstrap3");
-  }
 
 =head2 Template
 
@@ -160,7 +152,11 @@ use Mojo::Base 'Mojolicious::Plugin';
 use File::Spec::Functions 'catdir';
 use Cwd ();
 
-our $VERSION = '3.2002';
+our $VERSION = '3.2003';
+
+my @DEFAULT_CSS_FILES = qw( bootstrap.scss );
+my @DEFAULT_JS_FILES
+  = qw( transition.js alert.js button.js carousel.js collapse.js dropdown.js modal.js tooltip.js popover.js scrollspy.js tab.js affix.js );
 
 =head1 METHODS
 
@@ -177,12 +173,12 @@ the C<SASS_PATH> environment variable.
 =cut
 
 sub asset_path {
-  my($class, $type) = @_;
+  my ($class, $type) = @_;
   my $path = Cwd::abs_path(__FILE__);
 
   $path =~ s!\.pm$!!;
 
-  return join ':', grep { $_ } catdir($path, 'sass'), $ENV{SASS_PATH} if $type and $type eq 'sass';
+  return join ':', grep {$_} catdir($path, 'sass'), $ENV{SASS_PATH} if $type and $type eq 'sass';
   return $path;
 }
 
@@ -231,26 +227,26 @@ L<bootstrap.js> asset. Set this to 0 if you include your own jQuery.
 =cut
 
 sub register {
-  my($self, $app, $config) = @_;
+  my ($self, $app, $config) = @_;
 
   $app->plugin('AssetPack') unless eval { $app->asset };
 
-  $config->{css} ||= [qw( bootstrap.scss )];
-  $config->{js} ||= [qw( transition.js alert.js button.js carousel.js collapse.js dropdown.js modal.js tooltip.js popover.js scrollspy.js tab.js affix.js )];
+  $config->{css} ||= [@DEFAULT_CSS_FILES];
+  $config->{js}  ||= [@DEFAULT_JS_FILES];
   $config->{jquery} //= 1;
 
-  push @{ $app->static->paths }, $self->asset_path;
+  push @{$app->static->paths}, $self->asset_path;
 
   # TODO: 'bootstrap_resources.scss'
-  if(@{ $config->{css} }) {
+  if (@{$config->{css}}) {
     local $ENV{SASS_PATH} = $self->asset_path('sass');
-    $app->asset('bootstrap.css' => map { "/sass/$_" } @{ $config->{css} });
+    $app->asset('bootstrap.css' => map {"/sass/$_"} @{$config->{css}});
   }
 
-  if(@{ $config->{js} }) {
-    $app->asset('bootstrap.js' =>
-      $config->{jquery} ? ('/js/jquery-1.11.0.min.js') : (),
-      map { "/js/bootstrap/$_" } @{ $config->{js} },
+  if (@{$config->{js}}) {
+    $app->asset(
+      'bootstrap.js' => $config->{jquery} ? ('/js/jquery-1.11.0.min.js') : (),
+      map {"/js/bootstrap/$_"} @{$config->{js}},
     );
   }
 }

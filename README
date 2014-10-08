@@ -2,7 +2,7 @@ NAME
     Mojolicious::Plugin::Bootstrap3 - Mojolicious + http://getbootstrap.com/
 
 VERSION
-    3.1007
+    3.2003
 
 DESCRIPTION
     Mojolicious::Plugin::Bootstrap3 is used to include
@@ -13,18 +13,11 @@ DESCRIPTION
     pack.
 
 SYNOPSIS
-  Mojolicious::Lite
+  Mojolicious
       use Mojolicious::Lite;
       plugin "bootstrap3";
       get "/" => "index";
       app->start;
-
-  Mojolicious
-      sub startup {
-        my $self = shift;
-
-        $self->plugin("bootstrap3");
-      }
 
   Template
       <!doctype html>

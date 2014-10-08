@@ -1,13 +1,16 @@
-use t::Helper;
+use Mojo::Base -base;
+use Mojolicious::Lite;
+use Test::Mojo;
+use Test::More;
 
-{
-  use Mojolicious::Lite;
-  plugin 'bootstrap3';
-}
+# Test that the assets can be fetched like normal files
+
+plugin 'bootstrap3';
 
 my $t = Test::Mojo->new;
 
-for my $file (qw(
+for my $file (
+  qw(
   /font/glyphicons-halflings-regular.eot
   /font/glyphicons-halflings-regular.svg
   /font/glyphicons-halflings-regular.ttf
@@ -66,7 +69,9 @@ for my $file (qw(
   /sass/bootstrap/_utilities.scss
   /sass/bootstrap/_variables.scss
   /sass/bootstrap/_wells.scss
-)) {
+  )
+  )
+{
   $t->get_ok($file)->status_is(200);
 }
 

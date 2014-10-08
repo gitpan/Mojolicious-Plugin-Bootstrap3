@@ -1,23 +1,22 @@
-use t::Helper;
+use Mojo::Base -base;
+use Mojolicious;
+use Test::Mojo;
+use Test::More;
 
-plain skip_all 'Cannot access t/public/packed' unless -d 't/public/packed';
+my $app = Mojolicious->new(mode => 'production');
+my $t = Test::Mojo->new($app);
 
-{
-  use Mojolicious::Lite;
-  plugin 'bootstrap3', jquery => 0, js => ['affix.js'], css => [];
-  get '/:type' => sub {
-    my $c = shift;
-    $c->render(text => $c->asset('bootstrap.'.$c->stash('type')));
-  };
-}
+$app->plugin('AssetPack');
 
-my $t = Test::Mojo->new;
-my $src;
+plan skip_all => 'Sass is required' unless $app->asset->preprocessors->can_process('scss');
 
-$t->get_ok('/js')->status_is(200)->element_exists('script[src^="/packed/bootstrap-"]');
-$src = $t->tx->res->dom->at('script')->{src};
-$t->get_ok($src)->status_is(200)->content_like(qr{affix\.js}, 'affix.js');
-
-unlink "t/public/$src";
+$app->plugin(bootstrap3 => jquery => 0, js => ['affix.js'], css => []);
+$app->routes->get('/test1' => 'test1');
+$t->get_ok('/test1')->status_is(200)->text_like('script', qr{Bootstrap: affix\.js})
+  ->text_unlike('script', qr{jQuery Foundation}i);
 
 done_testing;
+
+__DATA__
+@@ test1.html.ep
+%= asset 'bootstrap.js' => { inline => 1 };

@@ -3,10 +3,10 @@
 Changes
 cpanfile
 lib/Mojolicious/Plugin/Bootstrap3.pm
-lib/Mojolicious/Plugin/Bootstrap3/font/glyphicons-halflings-regular.eot
-lib/Mojolicious/Plugin/Bootstrap3/font/glyphicons-halflings-regular.svg
-lib/Mojolicious/Plugin/Bootstrap3/font/glyphicons-halflings-regular.ttf
-lib/Mojolicious/Plugin/Bootstrap3/font/glyphicons-halflings-regular.woff
+lib/Mojolicious/Plugin/Bootstrap3/fonts/bootstrap/glyphicons-halflings-regular.eot
+lib/Mojolicious/Plugin/Bootstrap3/fonts/bootstrap/glyphicons-halflings-regular.svg
+lib/Mojolicious/Plugin/Bootstrap3/fonts/bootstrap/glyphicons-halflings-regular.ttf
+lib/Mojolicious/Plugin/Bootstrap3/fonts/bootstrap/glyphicons-halflings-regular.woff
 lib/Mojolicious/Plugin/Bootstrap3/js/bootstrap/affix.js
 lib/Mojolicious/Plugin/Bootstrap3/js/bootstrap/alert.js
 lib/Mojolicious/Plugin/Bootstrap3/js/bootstrap/bootstrap-sprockets.js

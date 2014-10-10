@@ -8,6 +8,7 @@ use File::Find;
 use File::Path qw( make_path remove_tree );
 
 plan skip_all => 'Cannot copy files without _bootstrap.scss' unless -r 'assets/stylesheets/_bootstrap.scss';
+plan skip_all => 'Cannot build files on install' if $INC{"Mojolicious/Plugin/Bootstrap3.pm"} =~ /\bblib\b/;
 
 my $CAN_SASS = do {
   my $app = Mojolicious->new;
@@ -18,7 +19,7 @@ my $CAN_SASS = do {
 my $BASE = 'lib/Mojolicious/Plugin/Bootstrap3';
 mkdir $BASE or die "mkdir $BASE: $!" unless -d $BASE;
 
-remove_tree "$BASE/$_" for qw( font js/bootstrap sass );
+remove_tree "$BASE/$_" for qw( fonts js/bootstrap sass );
 remove_tree "$BASE/packed" if $CAN_SASS;
 
 find(
@@ -44,7 +45,6 @@ SKIP: {
   $app->mode('production');
   $app->static->paths([Mojolicious::Plugin::Bootstrap3->asset_path]);
   $app->plugin('bootstrap3');
-  diag join ' ', packed_files();
   is_deeply([packed_files()], [qw( bootstrap.css bootstrap.js )], 'packed for production',);
 }
 
@@ -84,9 +84,9 @@ sub dest {
   unshift @path, 'sass';
   local $" = '/';
 
-  return "$BASE/font/$name"         if $file =~ /\bfonts\b/;
-  return "$BASE/js/bootstrap/$name" if $file =~ /\.js$/;
-  return "$BASE/@path/$name"        if $file =~ /\.scss$/;
+  return "$BASE/fonts/bootstrap/$name" if $file =~ /\bfonts\b/;
+  return "$BASE/js/bootstrap/$name"    if $file =~ /\.js$/;
+  return "$BASE/@path/$name"           if $file =~ /\.scss$/;
   return;
 }
 
